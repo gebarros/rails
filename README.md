@@ -1,4 +1,4 @@
-# Aplicação para laboratório de pesquisa
+# Aplicação genérica para laboratório 
 
 ## Necessário ter instalado:
 
