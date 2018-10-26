@@ -2,7 +2,7 @@
 
 <html>
 
-<h1>Pacientes</h1>
+<h1>Lista de Pacientes Cadastrados</h1>
 
   <table class="table">
     <thead class="text-primary">
@@ -18,9 +18,9 @@
           <td><%= p.name %></td>
           <td><%= p.email %></td>
           <td><%= p.birth_date %></td>
-          <td><%= link_to 'Show', patient_path(p) %></td>
-          <td><%= link_to 'Edit', edit_patient_path(p) %></td>
-          <td><%= link_to 'Destroy', patient_path(p), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <td><%= link_to 'Detalhes', patient_path(p) %></td>
+          <td><%= link_to 'Editar', edit_patient_path(p) %></td>
+          <td><%= link_to 'Deletar', patient_path(p), method: :delete, data: { confirm: 'Você tem certeza que quer excluir?' } %>
         </tr>
       <% end %>
     </tbody>

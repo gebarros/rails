@@ -1,15 +1,69 @@
+<h1>Cadastro de Paciente</h1>
 
 <%= form_with scope: :patient, url: patients_path, local: true do |form| %>
-    <p>
-      <%= form.label :nome %><br>
-      <%= form.text_field :name %>
-    </p>
-   
-    <p>
-      <%= form.label :email %><br>
-      <%= form.text_area :email %>
-    </p>
-   
+    <table>
+    <tr>
+        <td>
+        <%= form.label :nome %><br>
+        <%= form.text_field :name %>
+        </td>
+        
+        <td>
+        <%= form.label :sexo %><br>
+        <%= form.text_field :gender %>
+        </td>    
+
+        <td>
+        <%= form.label :data_de_nascimento %><br>
+        <%= form.text_field :birth_date %>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        <%= form.label :email %><br>
+        <%= form.text_field :email %>
+        </td>
+    
+        <td>
+        <%= form.label :telefone %><br>
+        <%= form.text_field :phone %>
+        </td>
+    
+    </tr>
+    
+    <tr>
+    <td>
+    <%= form.label :endereço %><br>
+    <%= form.text_field :address %>
+    </td>
+
+    <td>
+    <%= form.label :número %><br>
+    <%= form.text_field :address_number %>
+    </td>
+
+    <td>
+    <%= form.label :complemento %><br>
+    <%= form.text_field :address_complement %>
+    </td>
+    </tr>
+
+    <tr>
+    <td>
+    <%= form.label :cidade %><br>
+    <%= form.text_field :city %>
+    </td>
+
+    <td>
+    <%= form.label :estado %><br>
+    <%= form.text_field :address_uf %>
+    </td>
+
+    </tr>
+
+    </table>
+
     <p>
       <%= form.submit %>
     </p>
