@@ -1,19 +1,25 @@
-<table class="table">
-  <thead class="text-primary">
-    <th>Nome</th>
-    <th>Email</th>
-    <th>Data de Nascimento</th>
-    <th>Açoẽs</th>
-  </thead>
+<!DOCTYPE html>
 
-  <tbody>
-    <% @patients.each do |p| %>
-      <tr>
-        <td><%= p.name %></td>
-        <td><%= p.email %></td>
-        <td><%= p.birth_date.strftime("%d/%m/%Y") %></td>
-        <td><%= link_to 'Editar', patient_path(p) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<html>
+
+  <table class="table">
+    <thead class="text-primary">
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Data de Nascimento</th>
+      <th>Ações</th>
+    </thead>
+
+    <tbody>
+      <% @patients.each do |p| %>
+        <tr>
+          <td><%= p.name %></td>
+          <td><%= p.email %></td>
+          <td><%= p.birth_date.strftime("%d/%m/%Y") %></td>
+          <td><%= link_to 'Editar', patient_path(p) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</html>
