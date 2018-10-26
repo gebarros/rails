@@ -14,12 +14,12 @@
       <tr>
         <td><%= @patient.name %></td>
         <td><%= @patient.email %></td>
-        <td><%= @patient.birth_date.strftime("%d/%m/%Y") %></td>
+        <td><%= @patient.birth_date %></td>
         <td><%= @patient.city %></td>
       </tr>
     </tbody>
   </table>
 
   <%= link_to 'Voltar', patients_path %>
-
+ 
 </html>

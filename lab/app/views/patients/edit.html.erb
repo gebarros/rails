@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+<h1>Editando dados do paciente</h1>
+
+    <%= form_with(model: @patient, local: true) do |form| %>
+       
+        <p>
+          <%= form.label :nome %><br>
+          <%= form.text_field :name %>
+        </p>
+       
+        <p>
+          <%= form.label :email %><br>
+          <%= form.text_area :email %>
+        </p>
+       
+        <p>
+          <%= form.submit %>
+        </p>
+       
+      <% end %>
+
+  <td><%= link_to 'Voltar', patients_path %></td>
+</html>

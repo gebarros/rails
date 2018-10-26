@@ -2,6 +2,8 @@
 
 <html>
 
+<h1>Pacientes</h1>
+
   <table class="table">
     <thead class="text-primary">
       <th>Nome</th>
@@ -15,11 +17,15 @@
         <tr>
           <td><%= p.name %></td>
           <td><%= p.email %></td>
-          <td><%= p.birth_date.strftime("%d/%m/%Y") %></td>
-          <td><%= link_to 'Editar', patient_path(p) %></td>
+          <td><%= p.birth_date %></td>
+          <td><%= link_to 'Show', patient_path(p) %></td>
+          <td><%= link_to 'Edit', edit_patient_path(p) %></td>
+          <td><%= link_to 'Destroy', patient_path(p), method: :delete, data: { confirm: 'Are you sure?' } %>
         </tr>
       <% end %>
     </tbody>
   </table>
+
+  <%= link_to 'Novo Paciente', new_patient_path %>
 
 </html>
