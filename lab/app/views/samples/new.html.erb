@@ -1,0 +1,25 @@
+<h1>Cadastro de Amostra</h1>
+
+<%= form_with scope: :sample, url: samples_path, local: true do |form| %>
+    <table>
+    <tr>
+        <td>
+        <%= form.label :sample_type %><br>
+        <%= form.text_field :sample_type %>
+        </td>
+        
+    </tr>
+
+    <tr>
+        <td>
+        <%= form.label :collect_date %><br>
+        <%= form.text_field :collect_date %>
+        </td>
+        </tr>
+    </table>
+
+    <p>
+      <%= form.submit %>
+    </p>
+  <% end %>   
+  <%= link_to 'Voltar', samples_path %>
