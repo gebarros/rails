@@ -1,0 +1,27 @@
+<h1>Exames Realizados</h1>
+
+<table class="table">
+  <thead class="text-primary">
+    <th>Exame</th>
+    <th>Data do Exame</th>
+    <th>Data de Entrega</th>
+    <th>Ações</th>
+  </thead>
+
+  <tbody>
+    <% @exams.each do |e| %>
+      <tr>
+        <td><%= e.exam_type %></td>
+        <td><%= e.exam_date %></td>
+        <td><%= e.delivery_date %></td>
+        <td><%= link_to 'Detalhes', exam_path(e) %></td>
+        <td><%= link_to 'Editar', exam_path(e) %></td>
+        <td><%= link_to 'Deletar', exam_path(p), method: :delete, data: { confirm: 'Você tem certeza que quer excluir?' } %>
+        </tr>
+      </tr>
+    <% end %>
+  </tbody>
+  
+</table>
+
+<%= link_to 'Cadastrar Novo Exame', new_exam_path %>
