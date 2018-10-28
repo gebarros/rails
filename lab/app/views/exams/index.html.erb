@@ -15,8 +15,8 @@
         <td><%= e.exam_date %></td>
         <td><%= e.delivery_date %></td>
         <td><%= link_to 'Detalhes', exam_path(e) %></td>
-        <td><%= link_to 'Editar', exam_path(e) %></td>
-        <td><%= link_to 'Deletar', exam_path(p), method: :delete, data: { confirm: 'Você tem certeza que quer excluir?' } %>
+        <td><%= link_to 'Editar', edit_exam_path(e) %></td>
+        <td><%= link_to 'Deletar', exam_path(e), method: :delete, data: { confirm: 'Você tem certeza que quer excluir?' } %>
         </tr>
       </tr>
     <% end %>
@@ -24,4 +24,4 @@
   
 </table>
 
-<%= link_to 'Cadastrar Novo Exame', new_exam_path %>
+<%= link_to 'Novo Exame', new_exam_path %>
