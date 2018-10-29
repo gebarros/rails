@@ -44,7 +44,20 @@ class PatientsController < ApplicationController
 
   private
   def patient_params
-    params.require(:patient).permit(:name, :email, :birth_date, :address, :address_number, :address_complement, :city, :address_uf, :phone, :gender)
+    params
+      .require(:patient)
+      .permit(
+        :address, 
+        :address_complement, 
+        :address_number, 
+        :address_uf, 
+        :birth_date, 
+        :city, 
+        :email, 
+        :gender, 
+        :name, 
+        :phone
+      )
   end
 
 end

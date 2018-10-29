@@ -44,7 +44,13 @@ class ExamsController < ApplicationController
     
     private
     def exam_params
-        params.require(:exam).permit(:exam_type, :exam_date, :delivery_date)
+        params
+            .require(:exam)
+            .permit(
+                :delivery_date, 
+                :exam_date, 
+                :exam_type 
+            )
     end
 
 end
