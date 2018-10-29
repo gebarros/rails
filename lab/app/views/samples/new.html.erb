@@ -13,13 +13,13 @@
     <tr>
         <td>
         <%= form.label :collect_date %><br>
-        <%= form.text_field :collect_date %>
+        <%= form.date_select :collect_date %>
         </td>
         </tr>
     </table>
 
     <p>
-      <%= form.submit %>
+      <%= form.submit "Salvar"%>
     </p>
   <% end %>   
   <%= link_to 'Voltar', samples_path %>
