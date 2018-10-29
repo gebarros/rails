@@ -12,6 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2018_10_28_030043) do
 
+  create_table "exams", force: :cascade do |t|
+    t.string "exam_type"
+    t.date "exam_date"
+    t.date "delivery_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "patients", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -30,14 +38,6 @@ ActiveRecord::Schema.define(version: 2018_10_28_030043) do
   create_table "samples", force: :cascade do |t|
     t.string "sample_type"
     t.date "collect_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "exams", force: :cascade do |t|
-    t.string "exam_type"
-    t.date "exam_date"
-    t.date "delivery_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
