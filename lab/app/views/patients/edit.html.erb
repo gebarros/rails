@@ -1,73 +1,73 @@
-    <%= form_with(model: @patient, local: true) do |form| %>
-       
-        <table>
-        <tr>
-            <td>
-            <%= form.label :name %><br>
-            <%= form.text_field :name %>
-            </td>
-            
-            <td>
-            <%= form.label :gender %><br>
-            <%= form.text_field :gender %>
-            </td>    
+<%= form_with(model: @patient, local: true) do |form| %>
     
-            <td>
-            <%= form.label :birth_date %><br>
-            <%= form.text_field :birth_date %>
-            </td>
-        </tr>
-    
-        <tr>
-            <td>
-            <%= form.label :email %><br>
-            <%= form.text_field :email %>
-            </td>
+    <table>
+    <tr>
+        <td>
+        <%= form.label :name %><br>
+        <%= form.text_field :name %>
+        </td>
         
-            <td>
-            <%= form.label :phone %><br>
-            <%= form.text_field :phone %>
-            </td>
-        
-        </tr>
-        
-        <tr>
         <td>
-        <%= form.label :address %><br>
-        <%= form.text_field :address %>
-        </td>
-    
-        <td>
-        <%= form.label :address_number %><br>
-        <%= form.text_field :address_number %>
-        </td>
-    
-        <td>
-        <%= form.label :address_complement %><br>
-        <%= form.text_field :address_complement %>
-        </td>
-        </tr>
-    
-        <tr>
-        <td>
-        <%= form.label :city %><br>
-        <%= form.text_field :city %>
-        </td>
-    
-        <td>
-        <%= form.label :address_uf %><br>
-        <%= form.text_field :address_uf %>
-        </td>
-    
-        </tr>
-    
-        </table>
-       
-        <p>
-          <%= form.submit %>
-        </p>
-       
-      <% end %>
+        <%= form.label :gender %><br>
+        <%= form.text_field :gender %>
+        </td>    
 
-  <td><%= link_to 'Voltar', patients_path %></td>
+        <td>
+        <%= form.label :birth_date %><br>
+        <%= form.text_field :birth_date %>
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+        <%= form.label :email %><br>
+        <%= form.text_field :email %>
+        </td>
+    
+        <td>
+        <%= form.label :phone %><br>
+        <%= form.text_field :phone %>
+        </td>
+    
+    </tr>
+    
+    <tr>
+    <td>
+    <%= form.label :address %><br>
+    <%= form.text_field :address %>
+    </td>
+
+    <td>
+    <%= form.label :address_number %><br>
+    <%= form.text_field :address_number %>
+    </td>
+
+    <td>
+    <%= form.label :address_complement %><br>
+    <%= form.text_field :address_complement %>
+    </td>
+    </tr>
+
+    <tr>
+    <td>
+    <%= form.label :city %><br>
+    <%= form.text_field :city %>
+    </td>
+
+    <td>
+    <%= form.label :address_uf %><br>
+    <%= form.text_field :address_uf %>
+    </td>
+
+    </tr>
+
+    </table>
+    
+    <p>
+        <%= form.submit %>
+    </p>
+    
+    <% end %>
+
+<td><%= link_to 'Voltar', patients_path %></td>
 
