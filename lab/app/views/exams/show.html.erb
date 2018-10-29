@@ -1,0 +1,30 @@
+<h1>Detalhes do Exame</h1>
+
+  <table class="table">
+    <thead class="text-primary">
+      <th>Tipo do Exame</th>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= @exam.exam_type %></td>
+      </tr>
+    </tbody>
+
+    <thead class="text-primary">
+      <th>Data do Exame</th>
+      <th>Data da Entrega</th>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= @exam.exam_date %></td>
+        <td><%= @exam.delivery_date %></td>
+      </tr>
+    </tbody>
+
+      <tr>
+        <td><%= link_to 'Voltar', exams_path %> </td>
+        <td><%= link_to 'Editar', edit_exam_path %></td>
+      </tr>
+  </table>
