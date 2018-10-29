@@ -1,0 +1,26 @@
+<%= form_with(model: @sample, local: true) do |form| %>
+    
+<table>
+<tr>
+    <td>
+    <%= form.label :sample_type %><br>
+    <%= form.text_field :sample_type %>
+    </td>
+    
+</tr>
+
+<tr>
+    <td>
+    <%= form.label :collect_date %><br>
+    <%= form.text_field :collect_date %>
+    </td>
+</tr>
+</table>
+    
+    <p>
+        <%= form.submit %>
+    </p>
+    
+    <% end %>
+
+<td><%= link_to 'Voltar', samples_path %></td>
