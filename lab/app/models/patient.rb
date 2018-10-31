@@ -1,4 +1,4 @@
 class Patient < ApplicationRecord
-    has_many :exam
-    has_many :sample
+    has_many :exams
+    has_many :samples, through :exams
 end
