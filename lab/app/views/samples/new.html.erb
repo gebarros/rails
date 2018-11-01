@@ -1,25 +1,5 @@
 <h1>Cadastro de Amostra</h1>
 
-<%= form_with scope: :sample, url: samples_path, local: true do |form| %>
-    <table>
-    <tr>
-        <td>
-        <%= form.label :sample_type %><br>
-        <%= form.select :sample_type, ['Sangue', 'Swab'] %>
-        </td>
-        
-    </tr>
+<%= render partial: 'form' %>
 
-    <tr>
-        <td>
-        <%= form.label :collect_date %><br>
-        <%= form.date_select :collect_date %>
-        </td>
-        </tr>
-    </table>
-
-    <p>
-      <%= form.submit "Salvar"%>
-    </p>
-  <% end %>   
-  <%= link_to 'Voltar', samples_path %>
+<%= link_to 'Voltar', samples_path %>

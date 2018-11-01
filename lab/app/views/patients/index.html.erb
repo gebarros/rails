@@ -13,7 +13,7 @@
         <tr>
           <td><%= p.name %></td>
           <td><%= p.email %></td>
-          <td><%= p.birth_date %></td>
+          <td><%= p.birth_date.strftime("%d/%m/%Y") %></td>
           <td><%= link_to 'Detalhes', patient_path(p) %></td>
           <td><%= link_to 'Editar', edit_patient_path(p) %></td>
           <td><%= link_to 'Deletar', patient_path(p), method: :delete, data: { confirm: 'Você tem certeza que quer excluir?' } %>

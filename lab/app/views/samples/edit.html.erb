@@ -1,26 +1,5 @@
-<%= form_with(model: @sample, local: true) do |form| %>
-    
-<table>
-<tr>
-  <td>
-    <%= form.label :sample_type %><br>
-    <%= form.select :sample_type, ['Sangue', 'Swab'] %>
-  </td>
-    
-</tr>
+<h1>Edição de Amostra</h1>
 
-<tr>
-  <td>
-    <%= form.label :collect_date %><br>
-    <%= form.date_select :collect_date %>
-  </td>
-</tr>
-</table>
-  
-  <p>
-    <%= form.submit "Salvar"%>
-  </p>
-  
-  <% end %>
+<%= render partial: 'form' %>
 
-<td><%= link_to 'Voltar', samples_path %></td>
+<%= link_to 'Voltar', samples_path %>

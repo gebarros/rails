@@ -11,7 +11,7 @@
       <tr>
         <td><%= @patient.name %></td>
         <td><%= @patient.gender %></td>
-        <td><%= @patient.birth_date %></td>
+        <td><%= @patient.birth_date.strftime("%d/%m/%Y") %></td>
       </tr>
     </tbody>
 

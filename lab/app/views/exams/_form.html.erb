@@ -1,0 +1,27 @@
+<%= form_for @exam do |form| %>       
+  <table>
+    <tr>
+      <td>
+        <%= form.label :exam_type %><br>
+        <%= form.select :exam_type, ['Exoma', 'Painel', 'Paternidade']%>
+      </td>    
+    </tr>
+    <tr>
+      <td>
+        <%= form.label :exam_date %><br>
+        <%= form.date_select :exam_date, order:[:day,:month,:year]%>
+			</td> 
+		</tr>
+		<tr>   
+      <td>
+        <%= form.label :delivery_date %><br>
+        <%= form.date_select :delivery_date, order:[:day,:month,:year] %>
+      </td>
+    </tr>
+  </table>
+       
+  <p>
+    <%= form.submit  "Salvar"%>
+  </p>
+<% end %>
+
