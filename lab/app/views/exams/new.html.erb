@@ -1,31 +1,5 @@
 <h1>Cadastro de Exames</h1>
 
-<%= form_with scope: :exam, url: exams_path, local: true do |form| %>
-  <table>
-    <tr>
-        <td>
-        <%= form.label :exam_type %><br>
-        <%= form.select :exam_type, ['Exoma', 'Painel', 'Paternidade'] %>
-        </td>
-        
-    </tr>
+<%= render partial: 'form' %>
 
-    <tr>
-        <td>
-        <%= form.label :exam_date %><br>
-        <%= form.date_select :exam_date %>
-        </td>
-    
-        <td>
-        <%= form.label :delivery_date %><br>
-        <%= form.date_select :delivery_date %>
-        </td>
-    
-    </tr>
-    </table>
-
-    <p>
-      <%= form.submit "Salvar"%>
-    </p>
-  <% end %>   
-  <%= link_to 'Voltar', exams_path %>
+<%= link_to 'Voltar', exams_path %>
