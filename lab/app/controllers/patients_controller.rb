@@ -1,10 +1,11 @@
 class PatientsController < ApplicationController
+	before_action :load_patient, only: [:show, :edit, :update, :destroy]
+
   def index
     @patients = Patient.all
   end
 
   def show
-    @patient = Patient.find(params[:id])
   end
 
   def new 
@@ -12,7 +13,6 @@ class PatientsController < ApplicationController
   end
 
   def edit 
-    @patient = Patient.find(params[:id])
   end
 
   def create
@@ -26,8 +26,6 @@ class PatientsController < ApplicationController
   end
 
   def update
-    @patient = Patient.find(params[:id])
-
     if @patient.update(patient_params)
       redirect_to @patient
     else
@@ -36,13 +34,16 @@ class PatientsController < ApplicationController
   end
 
   def destroy
-    @patient = Patient.find(params[:id])
     @patient.destroy
  
     redirect_to patients_path
   end
 
-  private
+	private
+	def load_patient
+		@patient = Patient.find(params[:id])
+	end
+
   def patient_params
     params
       .require(:patient)
