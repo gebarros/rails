@@ -1,0 +1,22 @@
+<%= form_for @sample do |form| %>   
+	<table>
+	<tr>
+		<td>
+			<%= form.label :sample_type %><br>
+			<%= form.select :sample_type, ['Sangue', 'Swab'] %>
+		</td>
+			
+	</tr>
+	
+	<tr>
+		<td>
+			<%= form.label :collect_date %><br>
+			<%= form.date_select :collect_date, order:[:day,:month,:year] %>
+		</td>
+	</tr>
+	</table>
+	
+	<p>
+		<%= form.submit "Salvar"%>
+	</p>
+<% end %>
