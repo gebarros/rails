@@ -15,7 +15,7 @@
 
         <td>
         <%= form.label :birth_date %><br>
-        <%= form.text_field :birth_date %>
+        <%= form.date_select :birth_date%>
         </td>
     </tr>
 
@@ -65,7 +65,7 @@
     </table>
 
     <p>
-      <%= form.submit %>
+      <%= form.submit "Salvar"%>
     </p>
   <% end %>   
   <%= link_to 'Voltar', patients_path %>
