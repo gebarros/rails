@@ -1,10 +1,11 @@
 class SamplesController < ApplicationController
+	before_action :load_sample, only: [:show, :edit, :update, :destroy]
+
   def index
     @samples = Sample.all
   end
   
   def show
-    @sample = Sample.find(params[:id])
   end
   
   def new 
@@ -12,7 +13,6 @@ class SamplesController < ApplicationController
   end
   
   def edit 
-    @sample = Sample.find(params[:id])
   end
   
   def create
@@ -26,8 +26,6 @@ class SamplesController < ApplicationController
   end
   
   def update
-    @sample = Sample.find(params[:id])
-  
     if @sample.update(sample_params)
       redirect_to @sample
     else
@@ -36,13 +34,16 @@ class SamplesController < ApplicationController
   end
   
   def destroy
-    @sample = Sample.find(params[:id])
     @sample.destroy
    
     redirect_to samples_path
   end
   
-  private
+	private
+	def load_sample
+		@sample = Sample.find(params[:id])
+	end
+
   def sample_params
     params
       .require(:sample)

@@ -1,10 +1,11 @@
 class ExamsController < ApplicationController
+	before_action :load_exam, only: [:show, :edit, :update, :destroy]
+
   def index
     @exams = Exam.all
   end
     
   def show
-    @exam = Exam.find(params[:id])
   end
     
   def new 
@@ -12,7 +13,6 @@ class ExamsController < ApplicationController
   end
     
   def edit 
-    @exam = Exam.find(params[:id])
   end
     
   def create
@@ -26,8 +26,6 @@ class ExamsController < ApplicationController
   end
     
   def update
-    @exam = Exam.find(params[:id])
-    
     if @exam.update(exam_params)
         redirect_to @exam
     else
@@ -36,13 +34,16 @@ class ExamsController < ApplicationController
   end
     
   def destroy
-    @exam = Exam.find(params[:id])
     @exam.destroy
   
     redirect_to exams_path
   end
     
-  private
+	private
+	def load_exam
+		@exam = Exam.find(params[:id])
+	end
+
   def exam_params
     params
       .require(:exam)
