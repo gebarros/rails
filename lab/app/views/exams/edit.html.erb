@@ -1,32 +1,30 @@
  <%= form_with(model: @exam, local: true) do |form| %>
        
-    <table>
+  <table>
     <tr>
-        <td>
+      <td>
         <%= form.label :exam_type %><br>
-        <%= form.text_field :exam_type %>
-        </td>
-        
+        <%= form.select :exam_type, ['Exoma', 'Painel', 'Paternidade']
+      </td>    
     </tr>
 
     <tr>
-        <td>
+      <td>
         <%= form.label :exam_date %><br>
-        <%= form.text_field :exam_date %>
-        </td>
+        <%= form.date_select :exam_date %>
+      </td>
     
-        <td>
+      <td>
         <%= form.label :delivery_date %><br>
-        <%= form.text_field :delivery_date %>
-        </td>
-    
+        <%= form.date_select :delivery_date %>
+      </td>
     </tr>
-    </table>
+  </table>
        
-        <p>
-          <%= form.submit %>
-        </p>
-       
-      <% end %>
+  <p>
+    <%= form.submit  "Salvar"%>
+  </p>
+   
+  <% end %>
 
   <td><%= link_to 'Voltar', exams_path %></td>

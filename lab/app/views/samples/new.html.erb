@@ -5,7 +5,7 @@
     <tr>
         <td>
         <%= form.label :sample_type %><br>
-        <%= form.text_field :sample_type %>
+        <%= form.select :sample_type, ['Sangue', 'Swab'] %>
         </td>
         
     </tr>
@@ -13,13 +13,13 @@
     <tr>
         <td>
         <%= form.label :collect_date %><br>
-        <%= form.text_field :collect_date %>
+        <%= form.date_select :collect_date %>
         </td>
         </tr>
     </table>
 
     <p>
-      <%= form.submit %>
+      <%= form.submit "Salvar"%>
     </p>
   <% end %>   
   <%= link_to 'Voltar', samples_path %>
