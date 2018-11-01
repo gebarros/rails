@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_28_030043) do
+ActiveRecord::Schema.define(version: 2018_11_01_175904) do
+
+  create_table "exams", force: :cascade do |t|
+    t.string "exam_type"
+    t.date "exam_date"
+    t.date "delivery_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "patient_id"
+    t.index ["patient_id"], name: "index_exams_on_patient_id"
+  end
 
   create_table "exams", force: :cascade do |t|
     t.string "exam_type"
@@ -40,6 +50,8 @@ ActiveRecord::Schema.define(version: 2018_10_28_030043) do
     t.date "collect_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "exam_id"
+    t.index ["exam_id"], name: "index_samples_on_exam_id"
   end
 
 end
