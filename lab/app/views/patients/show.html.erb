@@ -1,60 +1,62 @@
-<h1>Detalhes do Paciente</h1>
+<div class="container-fluid">
+	<h1>Detalhes do Paciente</h1>
 
-  <table class="table">
-    <thead class="text-primary">
-      <th>Nome</th>
-      <th>Sexo</th>
-      <th>Data de Nascimento</th>
-    </thead>
+		<table class="table">
+			<thead class="text-primary">
+				<th>Nome</th>
+				<th>Sexo</th>
+				<th>Data de Nascimento</th>
+			</thead>
 
-    <tbody>
-      <tr>
-        <td><%= @patient.name %></td>
-        <td><%= @patient.gender %></td>
-        <td><%= @patient.birth_date.strftime("%d/%m/%Y") %></td>
-      </tr>
-    </tbody>
+			<tbody>
+				<tr>
+					<td><%= @patient.name %></td>
+					<td><%= @patient.gender %></td>
+					<td><%= @patient.birth_date.strftime("%d/%m/%Y") %></td>
+				</tr>
+			</tbody>
 
-    <thead class="text-primary">
-      <th>Email</th>
-      <th>Telefone</th>
-    </thead>
+			<thead class="text-primary">
+				<th>Email</th>
+				<th>Telefone</th>
+			</thead>
 
-    <tbody>
-      <tr>
-        <td><%= @patient.email %></td>
-        <td><%= @patient.phone %></td>
-      </tr>
-    </tbody>
+			<tbody>
+				<tr>
+					<td><%= @patient.email %></td>
+					<td><%= @patient.phone %></td>
+				</tr>
+			</tbody>
 
-    <thead class="text-primary">
-      <th>Endereço</th>
-      <th>Número</th>
-      <th>Complemento</th>
-    </thead>
+			<thead class="text-primary">
+				<th>Endereço</th>
+				<th>Número</th>
+				<th>Complemento</th>
+			</thead>
 
-    <tbody>
-      <tr>
-        <td><%= @patient.address %></td>
-        <td><%= @patient.address_number %></td>
-        <td><%= @patient.address_complement %></td>
-      </tr>
-    </tbody>
+			<tbody>
+				<tr>
+					<td><%= @patient.address %></td>
+					<td><%= @patient.address_number %></td>
+					<td><%= @patient.address_complement %></td>
+				</tr>
+			</tbody>
 
-    <thead class="text-primary">
-      <th>Cidade</th>
-      <th>Estado</th>
-    </thead>
+			<thead class="text-primary">
+				<th>Cidade</th>
+				<th>Estado</th>
+			</thead>
 
-    <tbody>
-      <tr>
-        <td><%= @patient.city %></td>
-        <td><%= @patient.address_uf %></td>
-      </tr>
-    </tbody>
+			<tbody>
+				<tr>
+					<td><%= @patient.city %></td>
+					<td><%= @patient.address_uf %></td>
+				</tr>
+			</tbody>
 
-      <tr>
-        <td><%= link_to 'Voltar', patients_path %> </td>
-        <td><%= link_to 'Editar', edit_patient_path %></td>
-      </tr>
-  </table>
+				<tr>
+					<td><%= link_to 'Voltar', patients_path %> </td>
+					<td><%= link_to 'Editar', edit_patient_path %></td>
+				</tr>
+		</table>
+</div>

@@ -1,25 +1,30 @@
-<h1>Lista de Pacientes Cadastrados</h1>
+<div class="container-fluid">
 
-  <table class="table">
-    <thead class="text-primary">
-      <th>Nome</th>
-      <th>Email</th>
-      <th>Data de Nascimento</th>
-      <th>Ações</th>
-    </thead>
+	<h1>Lista de Pacientes Cadastrados</h1>
 
-    <tbody>
-      <% @patients.each do |p| %>
-        <tr>
-          <td><%= p.name %></td>
-          <td><%= p.email %></td>
-          <td><%= p.birth_date.strftime("%d/%m/%Y") %></td>
-          <td><%= link_to 'Detalhes', patient_path(p) %></td>
-          <td><%= link_to 'Editar', edit_patient_path(p) %></td>
-          <td><%= link_to 'Deletar', patient_path(p), method: :delete, data: { confirm: 'Você tem certeza que quer excluir?' } %>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+		<table class="table">
+			<thead class="text-primary">
+				<tr>
+					<th scope="col">Nome</th>
+					<th scope="col">Email</th>
+					<th scope="col">Data de Nascimento</th>
+					<th scope="col" colspan="3" style="text-align: center">Ações</th>
+				</tr>
+			</thead>
 
-  <%= link_to 'Novo Paciente', new_patient_path %>
+			<tbody>
+				<% @patients.each do |p| %>
+					<tr>
+						<td><%= p.name %></td>
+						<td><%= p.email %></td>
+						<td><%= p.birth_date.strftime("%d/%m/%Y") %></td>
+						<td><%= link_to 'Detalhes', patient_path(p) %></td>
+						<td><%= link_to 'Editar', edit_patient_path(p) %></td>
+						<td><%= link_to 'Deletar', patient_path(p), method: :delete, data: { confirm: 'Você tem certeza que quer excluir?' } %>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+
+		<%= link_to 'Novo Paciente', new_patient_path %>
+</div>

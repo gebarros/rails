@@ -1,11 +1,13 @@
-<h1>Cadastro de Paciente</h1>
+<div class="container-fluid">
+	<h1>Cadastro de Paciente</h1>
 
-  <ul class="list">
-    <% @patient.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-    <% end %>
-  </ul>
+		<ul class="list">
+			<% @patient.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+			<% end %>
+		</ul>
 
-<%= render partial: 'form' %>
+	<%= render partial: 'form' %>
 
-<%= link_to 'Voltar', patients_path %>
+	<%= link_to 'Voltar', patients_path %>
+</div>
