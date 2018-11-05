@@ -1,0 +1,28 @@
+pt-BR:
+  activerecord:
+    attributes:
+      patient:
+        name: 'Nome do Paciente'
+        gender: 'Sexo'
+        birth_date: 'Data de Nascimento'
+        email: 'E-mail'
+        phone: 'Telefone'
+        address: 'Endereço'
+        address_number: 'Número'
+        address_complement: 'Complemento'
+        city: 'Cidade'
+        address_uf: 'Estado'
+
+      exam:
+        exam_type: 'Tipo do Exame'
+        exam_date: 'Data de Realização'
+        delivery_date: 'Data de Entrega'
+      
+      sample:
+        sample_type: 'Tipo da Amostra'
+        collect_date: 'Data da Coleta'
+
+      
+        
+
+
