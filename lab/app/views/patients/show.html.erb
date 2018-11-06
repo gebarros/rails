@@ -1,62 +1,41 @@
 <div class="container-fluid">
 	<h1>Detalhes do Paciente</h1>
 
-		<table class="table">
-			<thead class="text-primary">
-				<th>Nome</th>
-				<th>Sexo</th>
-				<th>Data de Nascimento</th>
-			</thead>
+	<br/>
 
-			<tbody>
-				<tr>
-					<td><%= @patient.name %></td>
-					<td><%= @patient.gender %></td>
-					<td><%= @patient.birth_date.strftime("%d/%m/%Y") %></td>
-				</tr>
-			</tbody>
+	<h3>Dados Pessoais:</h3>
 
-			<thead class="text-primary">
-				<th>Email</th>
-				<th>Telefone</th>
-			</thead>
+	<p>
+		<strong>Nome: </strong> <%= @patient.name %>
+		<strong>Sexo :</strong> <%= @patient.gender %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<br/><br/>
+		<strong>Data de Nascimento:</strong> <%= @patient.birth_date.strftime("%d/%m/%Y") %><br/>
+	</p>
 
-			<tbody>
-				<tr>
-					<td><%= @patient.email %></td>
-					<td><%= @patient.phone %></td>
-				</tr>
-			</tbody>
+	<br/>
 
-			<thead class="text-primary">
-				<th>Endereço</th>
-				<th>Número</th>
-				<th>Complemento</th>
-			</thead>
+	<h3>Contato:</h3>
 
-			<tbody>
-				<tr>
-					<td><%= @patient.address %></td>
-					<td><%= @patient.address_number %></td>
-					<td><%= @patient.address_complement %></td>
-				</tr>
-			</tbody>
+	<p>
+		<strong>Email: </strong> <%= @patient.email %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<strong>Telefone:</strong> <%= @patient.phone %><br />
+	</p>
 
-			<thead class="text-primary">
-				<th>Cidade</th>
-				<th>Estado</th>
-			</thead>
+	<br/>
 
-			<tbody>
-				<tr>
-					<td><%= @patient.city %></td>
-					<td><%= @patient.address_uf %></td>
-				</tr>
-			</tbody>
+	<h3>Endereço:</h3>
 
-				<tr>
-					<td><%= link_to 'Voltar', patients_path %> </td>
-					<td><%= link_to 'Editar', edit_patient_path %></td>
-				</tr>
-		</table>
+	<p>
+   	<strong>Rua/Av.: </strong> <%= @patient.address %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   	<strong>Número:</strong> <%= @patient.address_number %><br />
+		 <br/>
+	 	<strong>Complemento:</strong> <%= @patient.address_complement %><br />
+		 <br/>
+		<strong>Cidade:</strong> <%= @patient.city %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<strong>Cidade:</strong> <%= @patient.address_uf %><br />
+	</p>
+	<br/>
+	<%= link_to 'Voltar', patients_path %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<%= link_to 'Editar', edit_patient_path %>
+	
 </div>

@@ -1,5 +1,4 @@
 <div class="container-fluid">
-
 	<h1>Lista de Pacientes Cadastrados</h1>
 
 		<table class="table">
@@ -20,11 +19,11 @@
 						<td><%= p.birth_date.strftime("%d/%m/%Y") %></td>
 						<td><%= link_to 'Detalhes', patient_path(p) %></td>
 						<td><%= link_to 'Editar', edit_patient_path(p) %></td>
-						<td><%= link_to 'Deletar', patient_path(p), method: :delete, data: { confirm: 'Você tem certeza que quer excluir?' } %>
+						<td><%= link_to 'Deletar', patient_path(p), method: :delete, data: { confirm: 'Você tem certeza que deseja excluir?' } %>
 					</tr>
 				<% end %>
 			</tbody>
 		</table>
 
-		<%= link_to 'Novo Paciente', new_patient_path %>
+	<%= link_to 'Novo Paciente', new_patient_path %>
 </div>
