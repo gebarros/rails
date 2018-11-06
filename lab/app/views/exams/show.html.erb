@@ -1,32 +1,15 @@
 <div class="container-fluid">
 	<h1>Detalhes do Exame</h1>
 
-		<table class="table">
-			<thead class="text-primary">
-				<th>Tipo do Exame</th>
-			</thead>
+	<br/>
 
-			<tbody>
-				<tr>
-					<td><%= @exam.exam_type %></td>
-				</tr>
-			</tbody>
-
-			<thead class="text-primary">
-				<th>Data do Exame</th>
-				<th>Data da Entrega</th>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td><%= @exam.exam_date %></td>
-					<td><%= @exam.delivery_date.strftime("%d/%m/%Y") %></td>
-				</tr>
-			</tbody>
-
-				<tr>
-					<td><%= link_to 'Voltar', exams_path %> </td>
-					<td><%= link_to 'Editar', edit_exam_path %></td>
-				</tr>
-		</table>
+	<p>
+		<strong>Tipo do Exame: </strong> <%= @exam.exam_type %> <br/>
+			<br/><br/>
+		<strong>Data do Exame:</strong> <%= @exam.exam_date.strftime("%d/%m/%Y") %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<strong>Data da Entrega:</strong> <%= @exam.delivery_date.strftime("%d/%m/%Y") %><br/>
+	</p>
+	<br/>
+	<%= link_to 'Voltar', exams_path %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<%= link_to 'Editar', edit_exam_path %>
 </div>
