@@ -1,59 +1,26 @@
-<%= form_for @patient do |form| %>
-	<table>
-		<tr>
-			<td>
-				<%= form.label :name %><br>
-				<%= form.text_field :name %>
-			</td>
-				
-			<td>
-				<%= form.label :gender %><br>
-				<%= form.select :gender, ['F', 'M'] %>
-			</td>    
-			<td>
-				<%= form.label :birth_date %><br>
-				<%= form.date_select :birth_date, order:[:day,:month,:year], start_year: 1900%>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<%= form.label :email %><br>
-				<%= form.text_field :email %>
-			</td>
-			<td>
-				<%= form.label :phone %><br>
-				<%= form.text_field :phone %>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<%= form.label :address %><br>
-				<%= form.text_field :address %>
-			</td>
-			<td>
-				<%= form.label :address_number %><br>
-				<%= form.text_field :address_number %>
-			</td>
-			<td>
-				<%= form.label :address_complement %><br>
-				<%= form.text_field :address_complement %>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<%= form.label :city %><br>
-				<%= form.text_field :city %>
-			</td>
-			<td>
-				<%= form.label :address_uf %><br>
-				<%= form.text_field :address_uf %>
-			</td>
-		</tr>
-		</table>
+<%= simple_form_for @patient do |form| %>
 
-		<p>
-			<%= form.submit "Salvar"%>
-		</p>
+	<%= form.error_notification %>
+
+  <%= form.input :name%> <%= form.input :gender, collection: ['F', 'M']%>
+
+  <%= form.input :birth_date, order:[:day,:month,:year], start_year: 1900%>
+
+	<%= form.input :email%>
+
+	<%= form.input :phone%>
+
+	<%= form.input :address %>
+
+	<%= form.input :address_number %>
+
+	<%= form.input :address_complement %>
+
+	<%= form.input :city %>
+
+	<%= form.input :address_uf %>
+
+	<%= form.button :submit, "Salvar",class: "btn-primary" %>	
 <% end %>    
 
 	
