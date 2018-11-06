@@ -1,9 +1,9 @@
-<%= simple_form_for @sample do |form| %>   
+<%= simple_form_for @sample do |form| %>
 	<%= form.error_notification %> 
-
+	
 	<%= form.association :exam%>
-
-  <%= form.input :sample_type, collection: ['Sangue', 'Swab']%>
+	
+	<%= form.input :sample_type, collection: ['Sangue', 'Swab']%>
 
   <%= form.input :collect_date, order:[:day,:month,:year]%>
 
