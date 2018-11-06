@@ -14,6 +14,17 @@
 				<div>
 					<nav class="navbar navbar-dark bg-dark">
 						<a class="navbar-brand" href="#">Laboratório</a>
+
+							<ul class="nav navbar-nav navbar-right">
+								<%= link_to('Pacientes', root_path) %>
+							</ul>
+
+							<ul class="nav navbar-nav navbar-right">
+								<%= link_to('Exames', exams_path) %>
+							</ul>
+							<ul class="nav navbar-nav navbar-right">
+								<%= link_to("Amostras", samples_path) %>
+							</ul>
 					</nav>
 				</div>		
 		</div>	
