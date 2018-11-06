@@ -1,26 +1,25 @@
 <%= simple_form_for @patient do |form| %>
-
-	<%= form.error_notification %>
+  <%= form.error_notification %>
 
   <%= form.input :name%> <%= form.input :gender, collection: ['F', 'M']%>
 
   <%= form.input :birth_date, order:[:day,:month,:year], start_year: 1900%>
 
-	<%= form.input :email%>
+  <%= form.input :email%>
 
-	<%= form.input :phone%>
+  <%= form.input :phone%>
 
-	<%= form.input :address %>
+  <%= form.input :address %>
 
-	<%= form.input :address_number %>
+  <%= form.input :address_number %>
 
-	<%= form.input :address_complement %>
+  <%= form.input :address_complement %>
 
-	<%= form.input :city %>
+  <%= form.input :city %>
 
-	<%= form.input :address_uf %>
+  <%= form.input :address_uf %>
 
-	<%= form.button :submit, "Salvar",class: "btn-primary" %>	
+  <%= form.button :submit, "Salvar",class: "btn-primary" %>	
 <% end %>    
 
 	
