@@ -1,5 +1,7 @@
 <%= simple_form_for @sample do |form| %>   
-	<%= form.error_notification %>
+	<%= form.error_notification %> 
+
+	<%= form.association :exam%>
 
   <%= form.input :sample_type, collection: ['Sangue', 'Swab']%>
 
