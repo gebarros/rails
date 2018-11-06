@@ -17,7 +17,7 @@
 					<td><%= s.collect_date.strftime("%d/%m/%Y") %></td>
 					<td><%= link_to 'Detalhes', sample_path(s) %></td>
 					<td><%= link_to 'Editar', edit_sample_path(s) %></td>
-					<td><%= link_to 'Deletar', sample_path(s), method: :delete, data: { confirm: 'Você tem certeza que quer excluir?' } %>
+					<td><%= link_to 'Deletar', sample_path(s), method: :delete, data: { confirm: 'Você tem certeza que deseja excluir?' } %>
 					</tr>
 				</tr>
 			<% end %>

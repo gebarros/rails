@@ -1,30 +1,12 @@
 <div class="container-fluid">
 	<h1>Detalhes da Amostra</h1>
-
-		<table class="table">
-			<thead class="text-primary">
-				<th>Tipo da Amostra</th>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td><%= @sample.sample_type %></td>
-				</tr>
-			</tbody>
-
-			<thead class="text-primary">
-				<th>Data da Coleta</th>
-			</thead>
-
-			<tbody>
-				<tr>
-					<td><%= @sample.collect_date.strftime("%d/%m/%Y") %></td>
-				</tr>
-			</tbody>
-
-				<tr>
-					<td><%= link_to 'Voltar', samples_path %> </td>
-					<td><%= link_to 'Editar', edit_sample_path %></td>
-				</tr>
-		</table>
+	<br/>
+	<p>
+		<strong>Tipo da Amostra: </strong> <%= @sample.sample_type %> <br/>
+			<br/><br/>
+		<strong>Data da Coleta:</strong> <%= @sample.collect_date.strftime("%d/%m/%Y") %><br/>
+	</p>
+	<br/>
+	<%= link_to 'Voltar', samples_path %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<%= link_to 'Editar', edit_sample_path %>
 </div>
