@@ -6,30 +6,22 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+		<%= stylesheet_link_tag "style" %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+	
+	<%= render 'layouts/nav' %>
 
-  <body>
+	<div class="container-fluid">
+		<body>
+			<div>
+				<%= yield %>
+			</div>	
+		</body>
+	</div>
+
+	<footer class="footer">
 		<div class="container-fluid">
-				<div>
-					<nav class="navbar navbar-dark bg-dark">
-						<a class="navbar-brand" href="#">Laboratório</a>
-
-							<ul class="nav navbar-nav navbar-right">
-								<%= link_to('Pacientes', root_path) %>
-							</ul>
-
-							<ul class="nav navbar-nav navbar-right">
-								<%= link_to('Exames', exams_path) %>
-							</ul>
-							<ul class="nav navbar-nav navbar-right">
-								<%= link_to("Amostras", samples_path) %>
-							</ul>
-					</nav>
-				</div>		
-		</div>	
-		<div>
-			<%= yield %>
-		</div>	
-  </body>
+		</div>
+	</footer>
 </html>
