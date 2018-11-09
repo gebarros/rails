@@ -1,7 +1,9 @@
 <%= simple_form_for @patient do |form| %>
   <%= form.error_notification %>
 
-  <%= form.input :name%> <%= form.input :gender, collection: ['F', 'M']%>
+  <%= form.input :name%> 
+	
+	<%= form.input :gender, collection: ['F', 'M']%>
 
   <%= form.input :birth_date, order:[:day,:month,:year], start_year: 1900%>
 
