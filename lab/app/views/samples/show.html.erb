@@ -1,13 +1,11 @@
-<div class="container-fluid">
+<div class="col-sm">
 	<h1>Detalhes da Amostra</h1>
-	<br/>
-	<p>
+	
+	<div class='col-sm'>
 		<b>Tipo da Amostra: </b> <%= @sample.sample_type %> <br/>
-			<br/><br/>
 		<b>Data da Coleta:</b> <%= @sample.collect_date.strftime("%d/%m/%Y") %><br/>
-	</p>
-	<br/>
-	<%= link_to 'Voltar', samples_path %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<div/>
+	<%= link_to 'Voltar', samples_path %>
 	<%= link_to 'Editar', edit_sample_path %>
 </div>
 

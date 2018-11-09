@@ -1,39 +1,40 @@
-<div class="container-fluid">
+<div class="col-sm">
 	<h1>Detalhes do Paciente</h1>
-	<br/>
-	<h3>Dados Pessoais:</h3>
 
-	<p>
-		<b>Nome: </b> <%= @patient.name %>
-		<b>Sexo :</b> <%= @patient.gender %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<br/><br/>
-		<b>Data de Nascimento:</b> <%= @patient.birth_date.strftime("%d/%m/%Y") %><br/>
-	</p>
+	<div class='col-sm'>
+		<h3>Dados Pessoais:</h3>
 
-	<br/>
+		<p>
+			<b>Nome: </b> <%= @patient.name %>
+			<b>Sexo :</b> <%= @patient.gender %>
+		</p>
 
-	<h3>Contato:</h3>
+		<p>
+			<b>Data de Nascimento:</b> <%= @patient.birth_date.strftime("%d/%m/%Y") %>
+		</p>
+	</div>
 
-	<p>
-		<b>Email: </b> <%= @patient.email %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<b>Telefone:</b> <%= @patient.phone %><br />
-	</p>
+	<div class='col-sm'>
+		<h3>Contato:</h3>
 
-	<br/>
+		<p>
+			<b>Email:</b><%= @patient.email %>
+			<b>Telefone:</b> <%= @patient.phone %>
+		</p>
+	</div>
 
-	<h3>Endereço:</h3>
+	<div class='col-sm'>
+		<h3>Endereço:</h3>
 
-	<p>
-   	<b>Rua/Av.: </b> <%= @patient.address %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   	<b>Número:</b> <%= @patient.address_number %><br />
-		 <br/>
-	 	<b>Complemento:</b> <%= @patient.address_complement %><br />
-		 <br/>
-		<b>Cidade:</b> <%= @patient.city %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<b>Estado:</b> <%= @patient.address_uf %><br />
-	</p>
-	<br/>
-	<%= link_to 'Voltar', patients_path %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<p>
+			<b>Rua/Av.:</b> <%= @patient.address %>
+			<b>Número:</b> <%= @patient.address_number %>
+			<b>Complemento:</b> <%= @patient.address_complement %>
+			<b>Cidade:</b> <%= @patient.city %>
+			<b>UF:</b> <%= @patient.address_uf %>
+		</p>
+	</div>
+
+	<%= link_to 'Voltar', patients_path %> 
 	<%= link_to 'Editar', edit_patient_path %>
-	
 </div>
