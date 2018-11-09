@@ -4,10 +4,10 @@
 	<br/>
 
 	<p>
-		<strong>Tipo do Exame: </strong> <%= @exam.exam_type %> <br/>
+		<b>Tipo do Exame: </b> <%= @exam.exam_type %> <br/>
 			<br/><br/>
-		<strong>Data do Exame:</strong> <%= @exam.exam_date.strftime("%d/%m/%Y") %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<strong>Data da Entrega:</strong> <%= @exam.delivery_date.strftime("%d/%m/%Y") %><br/>
+		<b>Data do Exame:</b> <%= @exam.exam_date.strftime("%d/%m/%Y") %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<b>Data da Entrega:</b> <%= @exam.delivery_date.strftime("%d/%m/%Y") %><br/>
 	</p>
 	<br/>
 	<%= link_to 'Voltar', exams_path %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

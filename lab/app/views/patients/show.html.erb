@@ -4,10 +4,10 @@
 	<h3>Dados Pessoais:</h3>
 
 	<p>
-		<strong>Nome: </strong> <%= @patient.name %>
-		<strong>Sexo :</strong> <%= @patient.gender %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<b>Nome: </b> <%= @patient.name %>
+		<b>Sexo :</b> <%= @patient.gender %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<br/><br/>
-		<strong>Data de Nascimento:</strong> <%= @patient.birth_date.strftime("%d/%m/%Y") %><br/>
+		<b>Data de Nascimento:</b> <%= @patient.birth_date.strftime("%d/%m/%Y") %><br/>
 	</p>
 
 	<br/>
@@ -15,8 +15,8 @@
 	<h3>Contato:</h3>
 
 	<p>
-		<strong>Email: </strong> <%= @patient.email %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<strong>Telefone:</strong> <%= @patient.phone %><br />
+		<b>Email: </b> <%= @patient.email %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<b>Telefone:</b> <%= @patient.phone %><br />
 	</p>
 
 	<br/>
@@ -24,13 +24,13 @@
 	<h3>Endereço:</h3>
 
 	<p>
-   	<strong>Rua/Av.: </strong> <%= @patient.address %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   	<strong>Número:</strong> <%= @patient.address_number %><br />
+   	<b>Rua/Av.: </b> <%= @patient.address %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   	<b>Número:</b> <%= @patient.address_number %><br />
 		 <br/>
-	 	<strong>Complemento:</strong> <%= @patient.address_complement %><br />
+	 	<b>Complemento:</b> <%= @patient.address_complement %><br />
 		 <br/>
-		<strong>Cidade:</strong> <%= @patient.city %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<strong>Estado:</strong> <%= @patient.address_uf %><br />
+		<b>Cidade:</b> <%= @patient.city %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<b>Estado:</b> <%= @patient.address_uf %><br />
 	</p>
 	<br/>
 	<%= link_to 'Voltar', patients_path %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
