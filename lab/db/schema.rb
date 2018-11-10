@@ -22,14 +22,6 @@ ActiveRecord::Schema.define(version: 2018_11_01_175904) do
     t.index ["patient_id"], name: "index_exams_on_patient_id"
   end
 
-  create_table "exams", force: :cascade do |t|
-    t.string "exam_type"
-    t.date "exam_date"
-    t.date "delivery_date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "patients", force: :cascade do |t|
     t.string "name"
     t.string "email"
