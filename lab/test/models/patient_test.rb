@@ -59,9 +59,9 @@ class PatientTest < ActiveSupport::TestCase
     assert patient.errors.added? :gender, :blank
   end
 
-  test "Gender different of M or F is invalid" do
+  test "Gender different of M or F cloud not be included" do
     patient = Patient.new(gender: "P")
     assert_not patient.save
-    assert patient.errors.added? :gender, :invalid
+    assert patient.errors.added? :gender, :inclusion
   end
 end
