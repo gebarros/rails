@@ -2,8 +2,13 @@ require "test_helper"
 
 class PatientTest < ActiveSupport::TestCase
   test "Create a valid patient" do
-		patient = Patient.new(name: "Joao Ninguem", email: "joao@bol.br", phone: "1198372-7994",
-		birth_date: 13-07-1970, gender: "M")
+		patient = Patient.new(
+      birth_date: Date.new(1970, 7, 13),
+      email: "joao@bol.br",
+      gender: "M",
+      name: "Joao Ninguem",
+      phone: "1198372-7994"
+    )
     assert patient.save
   end
 
@@ -29,19 +34,19 @@ class PatientTest < ActiveSupport::TestCase
     assert_not patient.save
     assert patient.errors.added? :email, :invalid
 	end
-	
+
 	test "No patient phone blank" do
     patient = Patient.new(phone: "")
 		assert_not patient.save
     assert patient.errors.added? :phone, :blank
 	end
-	
+
 	test "Cannot create patient when phone is invalid" do
     patient = Patient.new(phone: "abcdef")
 		assert_not patient.save
     assert patient.errors.added? :phone, :invalid
 	end
-	
+
 	test "No patient birth date blank" do
     patient = Patient.new(birth_date: "")
 		assert_not patient.save
@@ -52,5 +57,11 @@ class PatientTest < ActiveSupport::TestCase
     patient = Patient.new(gender: "")
 		assert_not patient.save
     assert patient.errors.added? :gender, :blank
-	end
+  end
+
+  test "Gender different of M or F is invalid" do
+    patient = Patient.new(gender: "P")
+    assert_not patient.save
+    assert patient.errors.added? :gender, :invalid
+  end
 end
