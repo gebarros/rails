@@ -17,8 +17,10 @@ pt-BR:
         exam_type: 'Tipo do Exame'
         exam_date: 'Data de Realização'
         delivery_date: 'Data de Entrega'
+        patient: 'Nome do Paciente'
       
       sample:
+        exam: 'Tipo do Exame'
         sample_type: 'Tipo da Amostra'
         collect_date: 'Data da Coleta'
 

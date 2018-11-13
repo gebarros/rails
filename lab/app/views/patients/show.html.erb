@@ -1,60 +1,40 @@
-<h1>Detalhes do Paciente</h1>
+<div class="col-sm">
+	<h1>Detalhes do Paciente</h1>
 
-  <table class="table">
-    <thead class="text-primary">
-      <th>Nome</th>
-      <th>Sexo</th>
-      <th>Data de Nascimento</th>
-    </thead>
+	<div class='col-sm'>
+		<h3>Dados Pessoais:</h3>
 
-    <tbody>
-      <tr>
-        <td><%= @patient.name %></td>
-        <td><%= @patient.gender %></td>
-        <td><%= @patient.birth_date.strftime("%d/%m/%Y") %></td>
-      </tr>
-    </tbody>
+		<p>
+			<b>Nome: </b> <%= @patient.name %>
+			<b>Sexo :</b> <%= @patient.gender %>
+		</p>
 
-    <thead class="text-primary">
-      <th>Email</th>
-      <th>Telefone</th>
-    </thead>
+		<p>
+			<b>Data de Nascimento:</b> <%= @patient.birth_date.strftime("%d/%m/%Y") %>
+		</p>
+	</div>
 
-    <tbody>
-      <tr>
-        <td><%= @patient.email %></td>
-        <td><%= @patient.phone %></td>
-      </tr>
-    </tbody>
+	<div class='col-sm'>
+		<h3>Contato:</h3>
 
-    <thead class="text-primary">
-      <th>Endereço</th>
-      <th>Número</th>
-      <th>Complemento</th>
-    </thead>
+		<p>
+			<b>Email:</b><%= @patient.email %>
+			<b>Telefone:</b> <%= @patient.phone %>
+		</p>
+	</div>
 
-    <tbody>
-      <tr>
-        <td><%= @patient.address %></td>
-        <td><%= @patient.address_number %></td>
-        <td><%= @patient.address_complement %></td>
-      </tr>
-    </tbody>
+	<div class='col-sm'>
+		<h3>Endereço:</h3>
 
-    <thead class="text-primary">
-      <th>Cidade</th>
-      <th>Estado</th>
-    </thead>
+		<p>
+			<b>Rua/Av.:</b> <%= @patient.address %>
+			<b>Número:</b> <%= @patient.address_number %>
+			<b>Complemento:</b> <%= @patient.address_complement %>
+			<b>Cidade:</b> <%= @patient.city %>
+			<b>UF:</b> <%= @patient.address_uf %>
+		</p>
+	</div>
 
-    <tbody>
-      <tr>
-        <td><%= @patient.city %></td>
-        <td><%= @patient.address_uf %></td>
-      </tr>
-    </tbody>
-
-      <tr>
-        <td><%= link_to 'Voltar', patients_path %> </td>
-        <td><%= link_to 'Editar', edit_patient_path %></td>
-      </tr>
-  </table>
+	<%= link_to 'Voltar', patients_path %> 
+	<%= link_to 'Editar', edit_patient_path %>
+</div>

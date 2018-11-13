@@ -1,25 +1,31 @@
-<h1>Amostras Coletadas</h1>
+<div class="container-fluid">
+	<h1>Amostras Coletadas</h1>
 
-<table class="table">
-  <thead class="text-primary">
-    <th>Tipo da Amosta</th>
-    <th>Data da Coleta</th>
-    <th>Ações</th>
-  </thead>
+	<table class="table">
+		<thead class="text-primary">
+			<tr>
+					<th scope="col">Tipo da Amosta</th>
+					<th scope="col">Data da Coleta</th>
+					<th scope="col" colspan="3" style="text-align: center">Ações</th>
+			</tr>
+		</thead>
 
-  <tbody>
-    <% @samples.each do |s| %>
-      <tr>
-        <td><%= s.sample_type %></td>
-        <td><%= s.collect_date.strftime("%d/%m/%Y") %></td>
-        <td><%= link_to 'Detalhes', sample_path(s) %></td>
-        <td><%= link_to 'Editar', edit_sample_path(s) %></td>
-        <td><%= link_to 'Deletar', sample_path(s), method: :delete, data: { confirm: 'Você tem certeza que quer excluir?' } %>
-        </tr>
-      </tr>
-    <% end %>
-  </tbody>
-  
-</table>
+		<tbody>
+			<% @samples.each do |s| %>
+				<tr>
+					<td><%= s.sample_type %></td>
+					<td><%= s.collect_date.strftime("%d/%m/%Y") %></td>
+					<td><%= link_to 'Detalhes', sample_path(s) %></td>
+					<td><%= link_to 'Editar', edit_sample_path(s) %></td>
+					<td><%= link_to 'Deletar', sample_path(s), method: :delete, data: { confirm: 'Você tem certeza que deseja excluir?' } %>
+					</tr>
+				</tr>
+			<% end %>
+		</tbody>
+		
+	</table>
 
-<%= link_to 'Nova Amostra', new_sample_path %>
+	<%= link_to 'Nova Amostra', new_sample_path %>
+	
+</div>
+
