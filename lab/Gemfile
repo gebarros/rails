@@ -21,6 +21,8 @@ gem 'rails-i18n'
 
 gem 'simple_form'
 
+gem 'city-state'
+
 gem 'bootstrap'
 gem 'jquery-rails'
 
