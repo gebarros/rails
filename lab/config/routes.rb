@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   root 'patients#index'
 
-  resources :patients
+  resources :patients, only: :index
   resources :exams
   resources :samples
 end
