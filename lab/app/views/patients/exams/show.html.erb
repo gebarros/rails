@@ -1,0 +1,13 @@
+<div class="col-sm">
+	<h1>Detalhes do Exame</h1>
+
+	<div class='col-sm'>
+	<p>
+		<b>Tipo do Exame: </b> <%= @exam.exam_type %> <br/>
+		<b>Data do Exame:</b> <%= @exam.exam_date.strftime("%d/%m/%Y") %>
+		<b>Data da Entrega:</b> <%= @exam.delivery_date.strftime("%d/%m/%Y") %><br/>
+	</p>
+	<div/>
+	<%= link_to 'Voltar', exams_path %>
+	<%= link_to 'Editar', edit_exam_path %>
+</div>

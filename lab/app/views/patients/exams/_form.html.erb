@@ -1,0 +1,15 @@
+<%= simple_form_for @exam do |form| %>
+	<%= form.error_notification %>
+
+	<%= form.association :patient%>
+
+  <%= form.input :exam_type, collection: ['Exoma', 'Painel', 'Paternidade']%>
+
+  <%= form.input :exam_date, order:[:day,:month,:year]%>
+
+	<%= form.input :delivery_date, order:[:day,:month,:year] %>
+
+	<%= form.button :submit, "Salvar", class: "btn-primary" %>
+  <%= link_to 'Voltar', exams_path, class: "btn btn-primary" %>
+<% end %>
+
