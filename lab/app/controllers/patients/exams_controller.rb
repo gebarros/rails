@@ -5,7 +5,8 @@ class Patients::ExamsController < ApplicationController
   end
 
   def new
-    @exam = Exam.new
+    patient = Patient.find(params[:patient_id])
+    @exam = patient.exams.build
   end
 
   def edit
@@ -17,7 +18,7 @@ class Patients::ExamsController < ApplicationController
     @exam = patient.exams.build(exam_params)
 
     if @exam.save
-        redirect_to patient_exams_path
+        redirect_to exams_path
     else
         render 'new'
     end

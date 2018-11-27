@@ -10,6 +10,6 @@
 	<%= form.input :delivery_date, order:[:day,:month,:year] %>
 
 	<%= form.button :submit, "Salvar", class: "btn-primary" %>
-  <%= link_to 'Voltar', exams_path, class: "btn btn-primary" %>
+  <%= link_to 'Voltar', patient_exam_path(@exam), class: "btn btn-primary" %>
 <% end %>
 
