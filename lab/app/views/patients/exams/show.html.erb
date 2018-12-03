@@ -8,6 +8,6 @@
 		<b>Data da Entrega:</b> <%= @exam.delivery_date.strftime("%d/%m/%Y") %><br/>
 	</p>
 	<div/>
-	<%= link_to 'Voltar', exams_path %>
-	<%= link_to 'Editar', edit_exam_path %>
+	<%= link_to 'Voltar', patient_exams_path(@patient) %>
+	<%= link_to 'Editar', edit_patient_exam_path(@patient,@exam) %>
 </div>

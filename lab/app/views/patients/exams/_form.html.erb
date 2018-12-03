@@ -1,4 +1,4 @@
-<%= simple_form_for [@patient, @exam] do |form| %>
+<%= simple_form_for [:patient, @exam] do |form| %>
 	<%= form.error_notification %>
 
 	<%= form.association :patient%>
@@ -10,6 +10,6 @@
 	<%= form.input :delivery_date, order:[:day,:month,:year] %>
 
 	<%= form.button :submit, "Salvar", class: "btn-primary" %>
-  <% <%= link_to 'Voltar', patient_path, class: "btn btn-primary" %> %>
+  <%= link_to 'Voltar', patient_path(@exam.patient), class: "btn btn-primary" %>
 <% end %>
 

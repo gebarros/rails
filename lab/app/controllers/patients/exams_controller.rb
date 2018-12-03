@@ -1,8 +1,13 @@
 class Patients::ExamsController < ApplicationController
 
+  def index
+    @patient = Patient.find(params[:patient_id])
+    @exams = @patient.exams
+  end
+
   def show
     @patient = Patient.find(params[:patient_id])
-    @exam = patient.exams.find(params[:id])
+    @exam = @patient.exams.find(params[:id])
   end
 
   def new
@@ -11,11 +16,12 @@ class Patients::ExamsController < ApplicationController
   end
 
   def edit
-    @exam = patient.exams.find(params[:id])
+    @patient = Patient.find(params[:patient_id])
+    @exam = @patient.exams.find(params[:id])
   end
 
   def create
-    @patient = Patient.find(params[:patient_id])
+    patient = Patient.find(params[:patient_id])
     @exam = patient.exams.build(exam_params)
 
     if @exam.save
@@ -26,9 +32,10 @@ class Patients::ExamsController < ApplicationController
   end
 
   def update
-    @exam = patient.exams.find(params[:id])
+    @patient = Patient.find(params[:patient_id])
+    @exam = @patient.exams.find(params[:id])
     if @exam.update(exam_params)
-        redirect_to @exam
+        redirect_to patient_exam_path(@exam)
     else
         render 'edit'
     end
