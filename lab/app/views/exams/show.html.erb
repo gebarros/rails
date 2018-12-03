@@ -7,7 +7,7 @@
 		<b>Data do Exame:</b> <%= @exam.exam_date.strftime("%d/%m/%Y") %>
 		<b>Data da Entrega:</b> <%= @exam.delivery_date.strftime("%d/%m/%Y") %><br/>
 	</p>
-	<div/>
+	</div>
 	<%= link_to 'Voltar', exams_path %>
 	<%= link_to 'Editar', edit_exam_path %>
 </div>

@@ -1,7 +1,8 @@
 class Patients::ExamsController < ApplicationController
 
   def show
-    @exam = Exam.find(params[:id])
+    @patient = Patient.find(params[:patient_id])
+    @exam = patient.exams.find(params[:id])
   end
 
   def new
@@ -10,7 +11,7 @@ class Patients::ExamsController < ApplicationController
   end
 
   def edit
-    @exam = Exam.find(params[:id])
+    @exam = patient.exams.find(params[:id])
   end
 
   def create
@@ -18,14 +19,14 @@ class Patients::ExamsController < ApplicationController
     @exam = patient.exams.build(exam_params)
 
     if @exam.save
-        redirect_to exams_path
+        redirect_to patient_exams_path
     else
         render 'new'
     end
   end
 
   def update
-    @exam = Exam.find(params[:id])
+    @exam = patient.exams.find(params[:id])
     if @exam.update(exam_params)
         redirect_to @exam
     else
@@ -34,7 +35,7 @@ class Patients::ExamsController < ApplicationController
   end
 
   def destroy
-    @exam = Exam.find(params[:id])
+    @exam = patient.exams.find(params[:id])
     @exam.destroy
 
     redirect_to exams_path
@@ -48,7 +49,8 @@ class Patients::ExamsController < ApplicationController
       .permit(
         :delivery_date,
         :exam_date,
-        :exam_type
+        :exam_type,
+        :patient_id
       )
   end
 
