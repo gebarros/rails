@@ -18,7 +18,7 @@
 					<td><%= e.exam_date.strftime("%d/%m/%Y") %></td>
 					<td><%= e.delivery_date.strftime("%d/%m/%Y") %></td>
 					<td><%= link_to 'Detalhes', exams_path(e) %></td>
-					<td><%= link_to 'Editar', edit_patient_exam_path(e) %></td>
+					<td><%= link_to 'Editar', edit_exam_path(e) %></td>
 					<td><%= link_to 'Deletar', exam_path(e), method: :delete, data: { confirm: 'Você tem certeza que deseja excluir?' } %>
 					</tr>
 				</tr>
