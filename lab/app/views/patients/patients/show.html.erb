@@ -1,43 +1,39 @@
-<div class="col-sm">
-	<h1>Detalhes do Paciente</h1>
+<div class="jumbotron ">
+  <div style="line-height: 2em">
+    <h1>Detalhes do Paciente</h1>
 
-	<div class='col-sm'>
-		<h3>Dados Pessoais:</h3>
+    <div class='col-sm'>
+      <h3>Dados Pessoais:</h3>
 
-		<p>
-			<b>Nome: </b> <%= @patient.name %>
-			<b>Sexo :</b> <%= @patient.gender %>
-		</p>
+    <div class="row">
+      <div class="col-xs-6 col-md-12"><b>Nome: </b> <%= @patient.name %></div>
+    </div>
 
-		<p>
-			<b>Data de Nascimento:</b> <%= @patient.birth_date.strftime("%d/%m/%Y") %>
-		</p>
-	</div>
 
-	<div class='col-sm'>
-		<h3>Contato:</h3>
+    <div class="row">
+      <div class="col-xs-6 col-md-1"><b>Sexo :</b> <%= @patient.gender %></div>
+      <div class="col-xs-6 col-md-4"><b>Data de Nascimento:</b> <%= @patient.birth_date.strftime("%d/%m/%Y") %></div>
+      <div class="col-xs-6 col-md-4"><b>Email:</b><%= @patient.email %></div>
+      <div class="col-xs-6 col-md-3"><b>Telefone:</b> <%= @patient.phone %></div>
+    </div>
 
-		<p>
-			<b>Email:</b><%= @patient.email %>
-			<b>Telefone:</b> <%= @patient.phone %>
-		</p>
-	</div>
+    <div class="row">
+      <div class="col-xs-6 col-md-12"><b>Rua/Av.:</b> <%= @patient.address %></div>
+    </div>
 
-	<div class='col-sm'>
-		<h3>Endereço:</h3>
+  <div class="row">
+    <div class="col-xs-6 col-md-2"><b>Número:</b> <%= @patient.address_number %></div>
+    <div class="col-xs-6 col-md-2"><b>Complemento:</b> <%= @patient.address_complement %></div>
+    <div class="col-xs-6 col-md-4"><b>Cidade:</b> <%= @patient.city %></div>
+    <div class="col-xs-6 col-md-4"><b>UF:</b> <%= @patient.address_uf %></div>
+  </div>
 
-		<p>
-			<b>Rua/Av.:</b> <%= @patient.address %>
-			<b>Número:</b> <%= @patient.address_number %>
-			<b>Complemento:</b> <%= @patient.address_complement %>
-			<b>Cidade:</b> <%= @patient.city %>
-			<b>UF:</b> <%= @patient.address_uf %>
-		</p>
-	</div>
+    </div>
 
-	<%= link_to 'Voltar', root_path, class: "btn btn-primary" %>
-	<%= link_to 'Editar', edit_patient_path, class: "btn btn-primary" %>
-  <%= link_to 'Add Exame', new_patient_exam_path(@patient), class: "btn btn-primary"%>
-  <%= link_to 'Ver Exames', patient_exams_path(@patient), class: "btn btn-primary"%>
+    <%= link_to 'Voltar', root_path, class: "btn btn-primary" %>
+    <%= link_to 'Editar', edit_patient_path, class: "btn btn-primary" %>
+    <%= link_to 'Novo Exame', new_patient_exam_path(@patient), class: "btn btn-primary"%>
+    <%= link_to 'Ver Exames', patient_exams_path(@patient), class: "btn btn-primary"%>
 
+  </div>
 </div>
