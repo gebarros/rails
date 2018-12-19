@@ -3,11 +3,11 @@
 
 	<%= form.association :patient%>
 
-  <%= form.input :exam_type, collection: ['Exoma', 'Painel', 'Paternidade']%>
-
-  <%= form.input :exam_date, order:[:day,:month,:year]%>
-
-	<%= form.input :delivery_date, order:[:day,:month,:year] %>
+    <div class="row">
+      <div class="col-xs-6 col-md-4"><%= form.input :exam_type, collection: ['Exoma', 'Painel', 'Paternidade']%></div>
+      <div class="col-xs-6 col-md-4"><%= form.input :exam_date, order:[:day,:month,:year]%></div>
+      <div class="col-xs-6 col-md-4"><%= form.input :delivery_date, order:[:day,:month,:year] %></div>
+    </div>
 
 	<%= form.button :submit, "Salvar", class: "btn-primary" %>
   <%= link_to 'Voltar', patient_path(@exam.patient), class: "btn btn-primary" %>
