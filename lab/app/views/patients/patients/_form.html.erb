@@ -1,27 +1,24 @@
-<%= simple_form_for @patient do |form| %>
-  <%= form.error_notification %>
+  <%= simple_form_for @patient do |form| %>
+    <%= form.error_notification %>
 
-  <%= form.input :name%>
+    <%= form.input :name%>
+    <div class="row">
+      <div class="col-xs-6 col-md-1"><%= form.input :gender, collection: ['F', 'M']%></div>
+      <div class="col-xs-6 col-md-4"><%= form.input :birth_date, order:[:day,:month,:year], start_year: 1900%></div>
+      <div class="col-xs-6 col-md-4"><%= form.input :email, placeholder: "name@host.com"%></div>
+      <div class="col-xs-6 col-md-3"><%= form.input :phone, placeholder: "99 99999-9999" %></div>
+    </div>
 
-	<%= form.input :gender, collection: ['F', 'M']%>
+    <%= form.input :address %>
 
-  <%= form.input :birth_date, order:[:day,:month,:year], start_year: 1900%>
+    <div class="row">
+      <div class="col-xs-6 col-md-1"><%= form.input :address_number %></div>
+      <div class="col-xs-6 col-md-3"><%= form.input :address_complement %></div>
+      <div class="col-xs-6 col-md-7"><%= form.input :city %></div>
+      <div class="col-xs-6 col-md-1"><%= form.input :address_uf, collection: CS.states(:br) %></div>
+    </div>
 
-  <%= form.input :email, placeholder: "name@host.com"%>
-
-  <%= form.input :phone, placeholder: "99 99999-9999" %>
-
-  <%= form.input :address %>
-
-  <%= form.input :address_number %>
-
-  <%= form.input :address_complement %>
-
-  <%= form.input :city %>
-
-  <%= form.input :address_uf, collection: CS.states(:br) %>
-
-  <%= form.button :submit, "Salvar",class: "btn-primary" %>
-  <%= link_to 'Voltar', root_path, class: "btn btn-primary" %>
-<% end %>
+    <%= form.button :submit, "Salvar",class: "btn-primary" %>
+    <%= link_to 'Voltar', root_path, class: "btn btn-primary" %>
+  <% end %>
 
