@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<h1>Exames Realizados</h1>
+	<h1>Exames de <%= @patient.name%></h1>
 
 	<table class="table">
 		<thead class="text-primary">
@@ -17,13 +17,13 @@
 					<td><%= e.exam_type %></td>
 					<td><%= e.exam_date.strftime("%d/%m/%Y") %></td>
 					<td><%= e.delivery_date.strftime("%d/%m/%Y") %></td>
-					<td><%= link_to 'Detalhes', exams_path(e) %></td>
-					<td><%= link_to 'Editar', edit_exam_path(e) %></td>
-					<td><%= link_to 'Deletar', exam_path(e), method: :delete, data: { confirm: 'Você tem certeza que deseja excluir?' } %>
+					<td><%= link_to 'Detalhes', patient_exam_path(@patient,e) %></td>
+					<td><%= link_to 'Editar', edit_patient_exam_path(@patient,e) %></td>
+					<td><%= link_to 'Deletar', patient_exam_path(@patient,e), method: :delete, data: { confirm: 'Você tem certeza que deseja excluir?' } %>
 					</tr>
 				</tr>
 			<% end %>
 		</tbody>
-
 	</table>
+  <%= link_to 'Voltar', patient_path(@patient), class: "btn btn-primary" %>
 </div>
