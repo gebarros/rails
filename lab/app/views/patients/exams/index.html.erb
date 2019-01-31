@@ -7,7 +7,7 @@
 					<th scope="col">Exame</th>
 					<th scope="col">Data do Exame</th>
 					<th scope="col">Data de Entrega</th>
-					<th scope="col" colspan="3" style="text-align: center">Ações</th>
+					<th scope="col" colspan="3" style="text-align: center"></th>
 			</tr>
 		</thead>
 
@@ -17,9 +17,10 @@
 					<td><%= e.exam_type %></td>
 					<td><%= e.exam_date.strftime("%d/%m/%Y") %></td>
 					<td><%= e.delivery_date.strftime("%d/%m/%Y") %></td>
-					<td><%= link_to 'Detalhes', patient_exam_path(@patient,e) %></td>
-					<td><%= link_to 'Editar', edit_patient_exam_path(@patient,e) %></td>
-					<td><%= link_to 'Deletar', patient_exam_path(@patient,e), method: :delete, data: { confirm: 'Você tem certeza que deseja excluir?' } %>
+					<td><%= link_to 'Detalhes', patient_exam_path(@patient,e), class: "btn btn-primary" %></td>
+					<td><%= link_to 'Editar', edit_patient_exam_path(@patient,e), class: "btn btn-primary" %></td>
+          <td><%= link_to 'Deletar', patient_exam_path(@patient,e), class: "btn btn-danger",
+                  method: :delete, data: { confirm: 'Você tem certeza que deseja excluir?' } %>
 					</tr>
 				</tr>
 			<% end %>
